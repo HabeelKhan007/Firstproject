@@ -78,14 +78,12 @@ const Signup = () => {
     try {
       const newObj = { name: userName, number: usernumber, email: userEmail, password: userPassword };
       
-      const existEmail = parseData.some(element => element.email === newObj.email)
-      parseData.foreach(element => {
-        if (element.email === newObj.email) {
-          console.log('user exist');
-         return;
+      const existEmail = parseData.some(element => element.email === userEmail)
+      
+        if(existEmail){
+        console.log('User Already Exist')
+        return;
         }
-        
-      });
 
   const updatedArraya = [...userData, newObj];
       setUserData(updatedArraya)
