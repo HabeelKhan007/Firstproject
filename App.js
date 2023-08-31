@@ -22,6 +22,7 @@ import Items from './src/screens/Items';
 import Profile from './src/screens/Profile';
 import Modal from './src/screens/modal';
 import UserData from './src/screens/userdata';
+import ImagePicker from './src/screens/imagepicker';
 
 
 const Stack = createNativeStackNavigator();
@@ -108,6 +109,7 @@ const App = () => {
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Modal" component={Modal} />
         <Stack.Screen name='UserData' component={UserData} />
+        <Stack.Screen name='ImagePicker' component={ImagePicker} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -44,6 +44,11 @@ const SCREENS =[
     image: require('../../assets/signup.png'),
     name: "User Data",
   },
+  {
+    id: '9',
+    image: require('../../assets/signup.png'),
+    name: "Image Picker",
+  },
 ];
 
 const Home = () => {
@@ -75,6 +80,9 @@ const Home = () => {
           break;
       case '8':
         navigation.navigate('UserData');
+        break;
+        case '9':
+        navigation.navigate('ImagePicker');
         break;
 
       default:
