@@ -82,7 +82,7 @@ const Home = () => {
         navigation.navigate('UserData');
         break;
         case '9':
-        navigation.navigate('ImagePicker');
+        navigation.navigate('testScreen');
         break;
 
       default:

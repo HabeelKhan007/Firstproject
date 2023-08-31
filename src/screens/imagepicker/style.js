@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
     width:"100%",
     height:"100%",
     resizeMode:"center",
+    marginTop:"5%",
+    
   },
   buttonview:{
     width:"60%",
