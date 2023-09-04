@@ -14,7 +14,7 @@ const TestScreen = () => {
 
 
     const openGallery = async () => {
-        // if (images.length < 6) {
+        if (images.length < 6) {
 
             console.log('image lenght', images.length)
             ImagePicker.openPicker({
@@ -35,9 +35,9 @@ const TestScreen = () => {
                 // setPhoto(image.path)
             })
 
-        // } else {
-        //     alert('Limit Exceeded", "You can only add up to 6 images')
-        // }
+        } else {
+            alert('Limit Exceeded", "You can only add up to 6 images')
+        }
     }
 
     // const checkArray = () =>{

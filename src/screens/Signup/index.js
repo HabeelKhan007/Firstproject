@@ -40,63 +40,81 @@ const Signup = () => {
   // });
 
 
-//   const addUserData = async () => {
-//   try {
-//     const newObj = { name: userName, number: usernumber, email: userEmail, password: userPassword };
+  const addUserData = async () => {
+  try {
+    const newObj = { name: userName, number: usernumber, email: userEmail, password: userPassword };
     
-//     // Check if the email already exists in userData
-//     const emailExists = userData.some(element => element.email === newObj.email);
-//     console.log('data',emailExists )
-//     if (emailExists) {
-//       console.log('User Already Exists');
-//       return; // Return early to prevent further execution
-//     }
+    // Check if the email already exists in userData
+    const emailExists = userData.some(element => element.email === newObj.email);
+    console.log('data',emailExists )
+    if (emailExists) {
+      console.log('User Already Exists');
+      return; // Return early to prevent further execution
+    }
 
-//     const updatedArray = [...userData, newObj];
-//     console.log('updated array',updatedArray)
-//     setUserData(updatedArray);
+    const updatedArray = [...userData, newObj];
+    console.log('updated array',updatedArray)
+    setUserData(updatedArray);
 
-//     await AsyncStorage.setItem('Userinfo', JSON.stringify(updatedArray));
+    await AsyncStorage.setItem('Userinfo', JSON.stringify(updatedArray));
 
-//     console.log('User Signup Successfully');
-//     // navigation.navigate('Contact');
-//   } catch (error) {
-//     console.log('Error', error);
-//   }
-// }
+    console.log('User Signup Successfully');
+    // navigation.navigate('Contact');
+  } catch (error) {
+    console.log('Error', error);
+  }
+}
 
  
   
 
-  const addUserData = async () =>{
+  // const addUserData = async () =>{
 
-    const userArray = await AsyncStorage.getItem('Userinfo')
-    const parseData = JSON.parse(userArray)
+  //   const userArray = await AsyncStorage.getItem('Userinfo')
+  //   const parseData = JSON.parse(userArray)
 
     
 
-    try {
-      const newObj = { name: userName, number: usernumber, email: userEmail, password: userPassword };
+  //   try {
+  //     const newObj = { name: userName, number: usernumber, email: userEmail, password: userPassword };
       
-      const existEmail = parseData.some(element => element.email === userEmail)
+  //     const existEmail = parseData.some(element => element.email === userEmail)
       
-        if(existEmail){
-        console.log('User Already Exist')
-        return;
-        }
+  //       if(existEmail){
+  //       console.log('User Already Exist')
+  //       return;
+  //       }
 
-  const updatedArraya = [...userData, newObj];
-      setUserData(updatedArraya)
+  // const updatedArraya = [...userData, newObj];
+  //     setUserData(updatedArraya)
   
-      AsyncStorage.setItem('Userinfo', JSON.stringify(updatedArraya))
-      console.log('User Signup')
+  //     AsyncStorage.setItem('Userinfo', JSON.stringify(updatedArraya))
+  //     console.log('User Signup')
       
-    } catch (error) {
-      console.log('error', error)
-    }
+  //   } catch (error) {
+  //     console.log('error', error)
+  //   }
    
     
     
+  // }
+
+  const deleteUser = ()=>{
+
+    const updateData = userData.filter((user) => user.email != userEmail)
+
+    if(updateData.length === userData.length)
+    {
+      console.log("User you want to delete is not present")
+    }else{
+      setUserData(updateData)
+      console.log("User data deleted")
+    }
+    
+    
+
+    // console.log("Data deleted")
+    // console.log("Updated array is",updateData)
   }
   
   
@@ -214,6 +232,12 @@ const Signup = () => {
             style={styless.touchableopacity}
           >
             <Text style={styless.text2}>Check</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => (deleteUser())}
+            style={styless.touchableopacity}
+          >
+            <Text style={styless.text2}>Delete</Text>
           </TouchableOpacity>
         </ScrollView>
 
