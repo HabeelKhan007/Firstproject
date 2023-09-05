@@ -49,6 +49,16 @@ const SCREENS =[
     image: require('../../assets/signup.png'),
     name: "Image Picker",
   },
+  {
+    id: '10',
+    image: require('../../assets/shopping-bag.png'),
+    name: "ApiCall",
+  },
+  {
+    id: '11',
+    image: require('../../assets/shopping-bag.png'),
+    name: "PostApi",
+  },
 ];
 
 const Home = () => {
@@ -84,6 +94,12 @@ const Home = () => {
         case '9':
         navigation.navigate('testScreen');
         break;
+        case '10':
+          navigation.navigate('apiCall');
+          break;
+          case '11':
+          navigation.navigate('postapi');
+          break;
 
       default:
 

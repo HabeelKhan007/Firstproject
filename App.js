@@ -25,6 +25,8 @@ import UserData from './src/screens/userdata';
 import imagePicker from './src/screens/imagepicker';
 import testScreen from './src/screens/imagepicker';
 import TestScreen from './src/screens/imagepicker';
+import ApiCall from './src/screens/Apicall';
+import PostApi from './src/screens/PostApi';
 
 
 const Stack = createNativeStackNavigator();
@@ -112,6 +114,9 @@ const App = () => {
         <Stack.Screen name="Modal" component={Modal} />
         <Stack.Screen name='UserData' component={UserData} />
         <Stack.Screen name='testScreen' component={TestScreen} />
+        <Stack.Screen name='apiCall' component={ApiCall} />
+        <Stack.Screen name='postapi' component={PostApi} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
