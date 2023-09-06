@@ -27,6 +27,8 @@ import testScreen from './src/screens/imagepicker';
 import TestScreen from './src/screens/imagepicker';
 import ApiCall from './src/screens/Apicall';
 import PostApi from './src/screens/PostApi';
+import AxiousApi from './src/screens/AxiousApi';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -116,6 +118,8 @@ const App = () => {
         <Stack.Screen name='testScreen' component={TestScreen} />
         <Stack.Screen name='apiCall' component={ApiCall} />
         <Stack.Screen name='postapi' component={PostApi} />
+        <Stack.Screen name='axiousapi' component={AxiousApi} />
+
 
       </Stack.Navigator>
     </NavigationContainer>

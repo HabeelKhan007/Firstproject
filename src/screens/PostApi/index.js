@@ -1,6 +1,7 @@
 import { View, Text,Button} from 'react-native';
 import React from 'react';
 import FontFamily from '../../assets/customfonts/fonts';
+import styles from './style';
 
 const PostApi = () => {
 
@@ -26,8 +27,8 @@ const PostApi = () => {
     }
 
   return (
-    <View style={{flex:1}}>
-      <Text style={{color:"black",alignSelf:"center",fontSize:20,fontFamily:FontFamily.OpenSans_Condensed_Bold}}>PostApi</Text>
+    <View style={styles.mainview}>
+      <Text style={styles.text}>PostApi</Text>
       <Button title='PostApi' onPress={() => saveApiData()}/>
 
     </View>

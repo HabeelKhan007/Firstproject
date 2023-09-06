@@ -1,7 +1,6 @@
 import { View, Text, Image, Button, PermissionsAndroid, ScrollView, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { responsiveScreenWidth, responsiveScreenHeight, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
-import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
 import ImagePicker from 'react-native-image-crop-picker';
 import styles from './style';
 import { FlatList } from 'react-native';
