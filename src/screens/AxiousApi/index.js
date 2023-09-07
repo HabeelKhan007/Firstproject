@@ -24,7 +24,7 @@ const AxiousApi = () => {
                 price:price,
                 description:description,
                 image: 'https://i.pravatar.cc',
-                category: category
+                category: category,
             }
         )
         console.log("Data is :", result.data)
@@ -36,7 +36,7 @@ const AxiousApi = () => {
 
     return (
         <View>
-            <Text style={{ color: "black", alignSelf: "center" }}>AxiousApi</Text>
+            <Text style={{color:"black",alignSelf:"center",marginTop:'3%',fontSize:20}}>Post Api</Text>
             <TextInput
             style={{borderColor:"black",borderWidth:1,margin:"2%",color:"black",marginTop:"15%"}}
             placeholder='Title'
@@ -45,27 +45,27 @@ const AxiousApi = () => {
             onChangeText={text=> setTitle(text)}
             />
             <TextInput
-            style={{borderColor:"black",borderWidth:1,margin:"2%",color:"black",marginTop:"15%"}}
+            style={{borderColor:"black",borderWidth:1,margin:"2%",color:"black",marginTop:"5%"}}
             placeholder='Price'
             placeholderTextColor={"black"}
             value={price}
             onChangeText={text=> setPrice(text)}
             />
             <TextInput
-            style={{borderColor:"black",borderWidth:1,margin:"2%",color:"black",marginTop:"15%"}}
+            style={{borderColor:"black",borderWidth:1,margin:"2%",color:"black",marginTop:"5%"}}
             placeholder='description'
             placeholderTextColor={"black"}
             value={description}
             onChangeText={text=> setDescription(text)}
             />
              <TextInput
-            style={{borderColor:"black",borderWidth:1,margin:"2%",color:"black",marginTop:"15%"}}
+            style={{borderColor:"black",borderWidth:1,margin:"2%",color:"black",marginTop:"5%"}}
             placeholder='Category'
             placeholderTextColor={"black"}
             value={category}
             onChangeText={text=> setCategory(text)}
             />
-            <View style={{width:"70%",alignSelf:"center"}}>
+            <View style={{width:"70%",alignSelf:"center",marginTop:"5%"}}>
             <Button title='Post Data' onPress={() => (postData())} />
             </View>
         </View>

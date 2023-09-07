@@ -64,6 +64,11 @@ const SCREENS =[
     image: require('../../assets/shopping-bag.png'),
     name: "AxiousApi",
   },
+  {
+    id: '13',
+    image: require('../../assets/shopping-bag.png'),
+    name: "ContextsApi",
+  },
 ];
 
 const Home = () => {
@@ -107,6 +112,9 @@ const Home = () => {
           break;
           case '12':
             navigation.navigate('axiousapi');
+            break;
+            case '13':
+            navigation.navigate('contextApi');
             break;
 
       default:

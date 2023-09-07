@@ -28,6 +28,7 @@ import TestScreen from './src/screens/imagepicker';
 import ApiCall from './src/screens/Apicall';
 import PostApi from './src/screens/PostApi';
 import AxiousApi from './src/screens/AxiousApi';
+import ComponentA from './src/screens/ContextApi/inex';
 
 
 
@@ -119,6 +120,9 @@ const App = () => {
         <Stack.Screen name='apiCall' component={ApiCall} />
         <Stack.Screen name='postapi' component={PostApi} />
         <Stack.Screen name='axiousapi' component={AxiousApi} />
+        <Stack.Screen name='contextApi' component={ComponentA} />
+
+        
 
 
       </Stack.Navigator>
