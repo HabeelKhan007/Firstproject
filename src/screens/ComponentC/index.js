@@ -1,6 +1,7 @@
 import { View, Text,Button,TextInput } from 'react-native';
 import React,{useContext} from 'react';
 import { nameContext } from '../ContextApi/inex';
+import styles from './style';
 
 const ComponentC = () => {
     const {name,setName} = useContext(nameContext);
@@ -8,8 +9,8 @@ const ComponentC = () => {
     
   return (
     <View>
-      <Text style={{color:"black",marginTop:"15%",alignSelf:"center"}}>ComponentC</Text>
-      <View style={{marginTop:'10%',width:'70%',alignSelf:"center"}}>
+      <Text style={styles.text}>ComponentC</Text>
+      <View style={styles.buttonview}>
       <Button title='Print Data' onPress={()=> setName('Habeel')} />
       </View>
     </View>

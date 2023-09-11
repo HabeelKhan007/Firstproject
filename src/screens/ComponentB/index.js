@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import ComponentC from '../ComponentC';
+import styles from './style';
 
 const ComponentB = () => {
   return (
     <View>
-      <Text style={{color:"black",marginTop:"10%",alignSelf:"center"}}>ComponentB</Text>
+      <Text style={styles.text}>ComponentB</Text>
       <ComponentC/>
     </View>
   );
