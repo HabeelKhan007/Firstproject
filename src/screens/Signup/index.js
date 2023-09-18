@@ -13,12 +13,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Signup = () => {
 
+  const navigation = useNavigation();
   const [userName, setUserName] = useState();
   const[userEmail, setUserEmail] = useState();
-  const [secondname, setSecondname] = useState('');
-  const [confirmemail, setConfirmemail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [confirmPassword, setConfirmpassword] = useState('');
   const [usernumber, setNumber] = useState('');
   const [userData, setUserData] = useState([
   //  { 
@@ -41,6 +39,8 @@ const Signup = () => {
 
 
   const addUserData = async () => {
+    
+    
   try {
     const newObj = { name: userName, number: usernumber, email: userEmail, password: userPassword };
     
@@ -59,7 +59,7 @@ const Signup = () => {
     await AsyncStorage.setItem('Userinfo', JSON.stringify(updatedArray));
 
     console.log('User Signup Successfully');
-    // navigation.navigate('Contact');
+    navigation.navigate('Login');
   } catch (error) {
     console.log('Error', error);
   }
@@ -99,23 +99,23 @@ const Signup = () => {
     
   // }
 
-  const deleteUser = ()=>{
+  // const deleteUser = ()=>{
 
-    const updateData = userData.filter((user) => user.email != userEmail)
+  //   const updateData = userData.filter((user) => user.email != userEmail)
 
-    if(updateData.length === userData.length)
-    {
-      console.log("User you want to delete is not present")
-    }else{
-      setUserData(updateData)
-      console.log("User data deleted")
-    }
+  //   if(updateData.length === userData.length)
+  //   {
+  //     console.log("User you want to delete is not present")
+  //   }else{
+  //     setUserData(updateData)
+  //     console.log("User data deleted")
+  //   }
     
     
 
-    // console.log("Data deleted")
-    // console.log("Updated array is",updateData)
-  }
+  //   // console.log("Data deleted")
+  //   // console.log("Updated array is",updateData)
+  // }
   
   
   // const navigation = useNavigation();
@@ -155,18 +155,17 @@ const Signup = () => {
 
   return (
     <View style={styless.container}>
-      <ImageBackground source={require('../../assets/images.jpg')}
-        style={styless.imagebackground}
-      >
-        <ScrollView>
-          <Text
+      <View style={{backgroundColor:"lightblue",alignItems:"center",borderRadius:20,width:"95%",alignSelf:"center",marginTop:"2%"}}>
+     <Text
             style={styless.text1}>
             SIGNUP
           </Text>
-
+          </View>
+        <ScrollView>
           <TextInput
             style={styless.textinput}
             placeholder="First Name"
+            placeholderTextColor={'black'}
             // value={firstname}
             onChangeText={text =>{
               setUserName(text)
@@ -175,47 +174,52 @@ const Signup = () => {
             }
             autoCapitalize='none'
           />
-          <TextInput
+          {/* <TextInput
             style={styless.textinput1}
             placeholder="Second Name"
+            placeholderTextColor={'black'}
             // value={secondname}
             // onChangeText={text => setSecondname(text)}
             autoCapitalize='none'
-          />
+          /> */}
           <TextInput
             style={styless.textinput2}
             placeholder="Email"
+            placeholderTextColor={'black'}
             keyboardType='email-address'
             value={userEmail}
             onChangeText={text => setUserEmail(text)}
             autoCapitalize='none'
           />
-          <TextInput
+          {/* <TextInput
             style={styless.textinput3}
             placeholder="Confirm Email"
+            placeholderTextColor={'black'}
             // value={confirmemail}
             // onChangeText={text => setConfirmemail(text)}
             autoCapitalize='none'
-          />
+          /> */}
           <TextInput
             style={styless.textinput4}
             placeholder="Password"
+            placeholderTextColor={'black'}
             value={userPassword}
             onChangeText={text => setUserPassword(text)}
             secureTextEntry
             autoCapitalize='none'
           />
-          <TextInput
+          {/* <TextInput
             style={styless.textinput5}
             placeholder="Confirm Password"
             // value={confirmPassword}
             // onChangeText={text => setConfirmpassword(text)}
             secureTextEntry
             autoCapitalize='none'
-          />
+          /> */}
           <TextInput
             style={styless.textinput6}
             placeholder="Mobile Number"
+            placeholderTextColor={'black'}
             // value={number}
             onChangeText={text => setNumber(text)}
             keyboardType="number-pad"
@@ -234,14 +238,12 @@ const Signup = () => {
             <Text style={styless.text2}>Check</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => (deleteUser())}
+          {/* <TouchableOpacity onPress={() => (deleteUser())}
             style={styless.touchableopacity}
           >
             <Text style={styless.text2}>Delete</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </ScrollView>
-
-      </ImageBackground>
     </View>
   );
 };

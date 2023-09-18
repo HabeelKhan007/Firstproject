@@ -69,6 +69,11 @@ const SCREENS =[
     image: require('../../assets/shopping-bag.png'),
     name: "ContextsApi",
   },
+  {
+    id: '14',
+    image: require('../../assets/shopping-bag.png'),
+    name: "Shopping Store",
+  },
 ];
 
 const Home = () => {
@@ -84,7 +89,7 @@ const Home = () => {
         navigation.navigate('Chat');
         break;
       case '3':
-        navigation.navigate('Contact');
+        navigation.navigate('Login');
           break;
       case '4':
         navigation.navigate('Course');
@@ -116,6 +121,9 @@ const Home = () => {
             case '13':
             navigation.navigate('contextApi');
             break;
+            case '14':
+              navigation.navigate('apidata');
+              break;
 
       default:
 

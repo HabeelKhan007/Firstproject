@@ -1,12 +1,12 @@
 import React from 'react';
-import {View} from 'react-native'
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './src/screens/Home';
 import Course from './src/screens/Course';
 import About from './src/screens/About';
@@ -29,6 +29,13 @@ import ApiCall from './src/screens/Apicall';
 import PostApi from './src/screens/PostApi';
 import AxiousApi from './src/screens/AxiousApi';
 import ComponentA from './src/screens/ContextApi/inex';
+import Review from './src/screens/Review';
+import ApiData from './src/screens/ShowData/apiData';
+import { Provider } from 'react-redux';
+import store from './src/screens/Store/store';
+import Catogries from './src/screens/Catogries';
+
+
 
 
 
@@ -100,33 +107,37 @@ const Bottomtab = createBottomTabNavigator();
 // };
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/* <Stack.Screen name="Home" component={Drawertabs} /> */}
-        <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='Food' component={About} />
-        <Stack.Screen name='Chat' component={Account} />
-        <Stack.Screen name='Contact' component={Contact} />
-        <Stack.Screen name="Course" component={Course} />
-        <Stack.Screen name="Items" component={Items} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Fashion" component={Fashion} />
-        <Stack.Screen name="BuyItem" component={Buyitem} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Modal" component={Modal} />
-        <Stack.Screen name='UserData' component={UserData} />
-        <Stack.Screen name='testScreen' component={TestScreen} />
-        <Stack.Screen name='apiCall' component={ApiCall} />
-        <Stack.Screen name='postapi' component={PostApi} />
-        <Stack.Screen name='axiousapi' component={AxiousApi} />
-        <Stack.Screen name='contextApi' component={ComponentA} />
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          {/* <Stack.Screen name="Home" component={Drawertabs} /> */}
+          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen name='Food' component={About} />
+          <Stack.Screen name='Chat' component={Account} />
+          <Stack.Screen name='Contact' component={Contact} />
+          <Stack.Screen name="Course" component={Course} />
+          <Stack.Screen name="Items" component={Items} />
+          <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Fashion" component={Fashion} />
+          <Stack.Screen name="BuyItem" component={Buyitem} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Modal" component={Modal} />
+          <Stack.Screen name='UserData' component={UserData} />
+          <Stack.Screen name='testScreen' component={TestScreen} />
+          <Stack.Screen name='apiCall' component={ApiCall} />
+          <Stack.Screen name='postapi' component={PostApi} />
+          <Stack.Screen name='axiousapi' component={AxiousApi} />
+          <Stack.Screen name='contextApi' component={ComponentA} />
+          <Stack.Screen name='review' component={Review} />
+          <Stack.Screen name='apidata' component={ApiData} />
+          <Stack.Screen name='catogries' component={Catogries} />
 
-        
 
-
-      </Stack.Navigator>
-    </NavigationContainer>
+        </Stack.Navigator>
+      </NavigationContainer>
+      </Provider>
+    
   );
 };
 export default App;
