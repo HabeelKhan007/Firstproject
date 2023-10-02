@@ -34,6 +34,7 @@ import ApiData from './src/screens/ShowData/apiData';
 import { Provider } from 'react-redux';
 import store from './src/screens/Store/store';
 import Catogries from './src/screens/Catogries';
+import SaleProduct from './src/screens/SaleProduct';
 
 
 
@@ -132,12 +133,14 @@ const App = () => {
           <Stack.Screen name='review' component={Review} />
           <Stack.Screen name='apidata' component={ApiData} />
           <Stack.Screen name='catogries' component={Catogries} />
+          <Stack.Screen name='saleProduct' component={SaleProduct} />
+
 
 
         </Stack.Navigator>
       </NavigationContainer>
-      </Provider>
-    
+    </Provider>
+
   );
 };
 export default App;

@@ -45,13 +45,21 @@ const Login = () => {
 
     console.log("email ", userInfo)
 
-      if(userInfo !== useremail){
-        console.log("User login")
-        navigation.navigate('catogries')
+    const emailExists = userInfo.some(element => element.email === useremail && element.password === userpassword);
+    if(emailExists){
+      console.log("user login")
+      navigation.navigate('catogries')
+    }else{
+      console.log("usernot present")
+      console.warn("Invalid User Data")
+    }
+      // if(userInfo.email === useremail){
+      //   console.log("User login")
+      //   navigation.navigate('catogries')
 
-      }else{
-        console.log("invalid email and password")
-      }
+      // }else{
+      //   console.log("invalid email and password")
+      // }
     
 
     // if(Email===email && Password===password){

@@ -10,7 +10,15 @@ export const api = createApi({
       }),
       
     }),
+    fetchCatogries: builder.query({
+      query: () => ({
+        url:"/products",
+        method:'Get',
+      }),
+      
+    }),
   }),
+
 });
 
-export const {useFetchDataQuery} = api;
+export const {useFetchDataQuery, useFetchCatogriesQuery} = api;
